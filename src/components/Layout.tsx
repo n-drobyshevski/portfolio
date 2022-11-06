@@ -8,7 +8,7 @@ type LayoutProps = {
 };
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="container flex h-screen w-screen flex-col bg-neutral-900 px-56">
+    <div className="container relative flex h-full flex-col">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -18,10 +18,10 @@ const Layout = ({ children }: LayoutProps) => {
         <meta name="og:title" content="Portfolio" />
       </Head>
       <Header />
-      <main className="my-12 grid h-max grow grid-cols-7 gap-6">
+      {/* <main className="my-12 grid h-max grow grid-cols-7 gap-6">
         {children}
-      </main>
-      <ScrollIndicator />
+      </main> */}
+      <ScrollIndicator top={false} bottom={true} />
       <Sidebar />
     </div>
   );

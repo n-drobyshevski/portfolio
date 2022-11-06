@@ -5,9 +5,9 @@ import Sidebar from "@/components/Sidebar";
 
 const Home: NextPage = () => {
   return (
-    <Layout>
-      <Sidebar />
-    </Layout>
+    <div className="container h-screen w-screen bg-neutral-900 px-56 pb-8">
+      <Layout></Layout>
+    </div>
   );
 };
 
