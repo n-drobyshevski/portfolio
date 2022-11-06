@@ -8,7 +8,7 @@ type LayoutProps = {
 };
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="container flex h-screen w-screen flex-col bg-neutral-300 px-56">
+    <div className="container flex h-screen w-screen flex-col bg-neutral-900 px-56">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
