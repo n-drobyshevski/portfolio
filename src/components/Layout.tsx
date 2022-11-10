@@ -22,7 +22,7 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </main> */}
       <ScrollIndicator top={false} bottom={true} />
-      <Sidebar currentSectionName="home" />
+      <Sidebar currentSectionName="about" />
     </div>
   );
 };

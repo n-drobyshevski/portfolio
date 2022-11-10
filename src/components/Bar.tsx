@@ -1,7 +1,15 @@
-const Bar = ({ style }: { style?: string }) => {
+const Bar = ({
+  style,
+  h,
+  w,
+}: {
+  style?: string;
+  h: number | 'full' | 'auto';
+  w: number | 'full' | 'auto';
+}) => {
   return (
     <div
-      className={`h-1.5 w-4 border-b-2 border-neutral-500 ${
+      className={`h-${h} w-${w} rounded border border-neutral-500 ${
         style ? style : ''
       }`}
     ></div>

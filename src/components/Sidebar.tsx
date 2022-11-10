@@ -43,7 +43,7 @@ const Sidebar = ({ currentSectionName }: { currentSectionName: string }) => {
           ? before.map((item) => <MenuItem key={item} name={item} />)
           : ''}
         <MenuItem name={currentItemName} isCurrent={true} />
-        <Bar style="-rotate-90 grow" />
+        <Bar w={0} h="auto" style="grow" />
         {after ? after.map((item) => <MenuItem key={item} name={item} />) : ''}
       </div>
     );
