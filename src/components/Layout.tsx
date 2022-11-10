@@ -1,7 +1,7 @@
-import Head from "next/head";
-import Header from "./Header";
-import ScrollIndicator from "./ScrollIndicator";
-import Sidebar from "./Sidebar";
+import Head from 'next/head';
+import Header from './Header';
+import ScrollIndicator from './ScrollIndicator';
+import Sidebar from './Sidebar';
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -22,7 +22,7 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </main> */}
       <ScrollIndicator top={false} bottom={true} />
-      <Sidebar />
+      <Sidebar currentSectionName="home" />
     </div>
   );
 };

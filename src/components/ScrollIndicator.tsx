@@ -1,8 +1,4 @@
-const Bar = () => {
-  return (
-    <div className="h-1.5 w-4 grow-0 border-b-2 border-neutral-500 "></div>
-  );
-};
+import Bar from "./Bar";
 
 type ScrollIndicatorProps = { top: boolean; bottom: boolean };
 const ScrollIndicator = ({ top, bottom }: ScrollIndicatorProps) => {
