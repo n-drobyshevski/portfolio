@@ -38,7 +38,7 @@ const Sidebar = ({ currentSectionName }: { currentSectionName: string }) => {
       }
     }
     return (
-      <div className="absolute bottom-0 right-0 flex h-5/6 flex-col items-end gap-4">
+      <div className="flex h-full flex-col items-end gap-4">
         {before
           ? before.map((item) => <MenuItem key={item} name={item} />)
           : ''}
