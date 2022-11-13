@@ -18,7 +18,7 @@ const Layout = ({ children }: LayoutProps) => {
         <meta name="og:title" content="Portfolio" />
       </Head>
       <Header />
-      <main className="col-start-2 col-end-9 row-start-2 row-end-3 mt-6 gap-6 border border-white">
+      <main className="col-start-2 col-end-9 row-start-2 row-end-3 mt-6 gap-6  ">
         {children}
       </main>
       <div
