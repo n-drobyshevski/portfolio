@@ -8,7 +8,7 @@ type LayoutProps = {
 };
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="container grid h-full grid-cols-9 grid-rows-[100px_1fr_50px]">
+    <div className="container grid h-full grid-cols-9 grid-rows-[100px_1fr_50px] overflow-hidden">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -18,9 +18,11 @@ const Layout = ({ children }: LayoutProps) => {
         <meta name="og:title" content="Portfolio" />
       </Head>
       <Header />
-      <main className="col-start-2 col-end-9 row-start-2 row-end-3 mt-6 gap-6  ">
+
+      <main className="col-start-2 col-end-9 row-start-2 row-end-3 mt-6 gap-6 overflow-y-scroll  ">
         {children}
       </main>
+
       <div
         className="col-start-10 col-end-9 row-start-2 row-end-4"
         id="sidebar"
