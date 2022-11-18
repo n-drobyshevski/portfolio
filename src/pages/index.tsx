@@ -6,6 +6,7 @@ import HomeSection from '@/components/sections/HomeSection';
 import AboutSection from '@/components/sections/AboutSection';
 import SkillsSection from '@/components/sections/SkillsSection';
 import ProjectSection from '@/components/sections/ProjectsSection';
+import ContactSection from '@/components/sections/ContactSection';
 const Home: NextPage = () => {
   return (
     <div className="container h-screen w-screen bg-neutral-900 px-56 pb-8">
@@ -13,7 +14,8 @@ const Home: NextPage = () => {
         {/* <HomeSection /> */}
         {/* <AboutSection /> */}
         {/* <SkillsSection /> */}
-        <ProjectSection />
+        {/* <ProjectSection /> */}
+        <ContactSection />
       </Layout>
     </div>
   );
