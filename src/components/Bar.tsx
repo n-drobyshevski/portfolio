@@ -9,7 +9,7 @@ const Bar = ({
 }) => {
   return (
     <div
-      className={`h-${h} w-${w} rounded border border-neutral-500 ${
+      className={`h-${h} w-${w} rounded border border-blue-400/[.5] ${
         style ? style : ''
       }`}
     ></div>
