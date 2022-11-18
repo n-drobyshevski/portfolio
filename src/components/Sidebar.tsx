@@ -8,16 +8,14 @@ const MenuItem = ({
   name: string;
 }) => {
   return (
-    <div
-      className={` ${isCurrent ? ' text-neutral-400 ' : 'text-neutral-500'}`}
-    >
+    <div className={` ${isCurrent ? ' text-blue-400 ' : 'text-neutral-500'}`}>
       {name}
     </div>
   );
 };
 const Sidebar = ({ currentSectionName }: { currentSectionName: string }) => {
   type menuItemName = 'home' | 'about' | 'skills' | 'projects' | 'contact';
-  const items: menuItemName[] = [
+  const menuItems: menuItemName[] = [
     'home',
     'about',
     'skills',
@@ -26,15 +24,15 @@ const Sidebar = ({ currentSectionName }: { currentSectionName: string }) => {
   ];
   let before: menuItemName[] = [];
   let after: menuItemName[] = [];
-  const currentItemIndex: number = items.findIndex(
+  const currentItemIndex: number = menuItems.findIndex(
     (item) => item == currentSectionName
   );
-  const currentItemName: menuItemName | undefined = items[currentItemIndex];
+  const currentItemName: menuItemName | undefined = menuItems[currentItemIndex];
   if (typeof currentItemName !== 'undefined') {
-    for (let i = 0; i < items.length; i++) {
-      if (items[i] == currentItemName) {
-        before = items.slice(0, currentItemIndex);
-        after = items.slice(currentItemIndex + 1, -1);
+    for (let i = 0; i < menuItems.length; i++) {
+      if (menuItems[i] == currentItemName) {
+        before = menuItems.slice(0, currentItemIndex);
+        after = menuItems.slice(-(before.length + 1));
       }
     }
     return (
