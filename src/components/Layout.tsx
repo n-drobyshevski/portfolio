@@ -21,7 +21,7 @@ const Layout = ({ children }: LayoutProps) => {
       <main className="col-start-3 col-end-8 row-start-2">{children}</main>
 
       <div className="col-start-9 row-start-2">
-        <Sidebar currentSectionName="about" />
+        <Sidebar currentSection="about" />
       </div>
     </div>
   );

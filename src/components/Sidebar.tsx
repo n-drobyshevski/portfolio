@@ -1,20 +1,18 @@
-import Bar from './Bar';
+type menuItemName = 'home' | 'about' | 'skills' | 'projects' | 'contact';
 
-const MenuItem = ({
-  isCurrent = false,
-  name,
-}: {
-  isCurrent?: boolean;
-  name: string;
-}) => {
+type MenuItemProps = { isCurrent: boolean; name: menuItemName };
+const MenuItem = ({ isCurrent = false, name }: MenuItemProps) => {
   return (
-    <div className={` ${isCurrent ? ' text-blue-400 ' : 'text-neutral-500'}`}>
+    <div
+      className={`text-sm uppercase ${
+        isCurrent ? ' text-blue-400 ' : 'text-neutral-500'
+      }`}
+    >
       {name}
     </div>
   );
 };
-const Sidebar = ({ currentSectionName }: { currentSectionName: string }) => {
-  type menuItemName = 'home' | 'about' | 'skills' | 'projects' | 'contact';
+const Sidebar = ({ currentSection }: { currentSection: menuItemName }) => {
   const menuItems: menuItemName[] = [
     'home',
     'about',
@@ -22,31 +20,14 @@ const Sidebar = ({ currentSectionName }: { currentSectionName: string }) => {
     'projects',
     'contact',
   ];
-  let before: menuItemName[] = [];
-  let after: menuItemName[] = [];
-  const currentItemIndex: number = menuItems.findIndex(
-    (item) => item == currentSectionName
+  return (
+    <div className="flex h-full flex-col items-end justify-center gap-4">
+      {menuItems.map((name) => {
+        const isCurrent = name === currentSection;
+        return <MenuItem key={name} name={name} isCurrent={isCurrent} />;
+      })}
+    </div>
   );
-  const currentItemName: menuItemName | undefined = menuItems[currentItemIndex];
-  if (typeof currentItemName !== 'undefined') {
-    for (let i = 0; i < menuItems.length; i++) {
-      if (menuItems[i] == currentItemName) {
-        before = menuItems.slice(0, currentItemIndex);
-        after = menuItems.slice(-(before.length + 1));
-      }
-    }
-    return (
-      <div className="flex h-full flex-col items-end justify-center gap-4">
-        {before
-          ? before.map((item) => <MenuItem key={item} name={item} />)
-          : ''}
-        <MenuItem name={currentItemName} isCurrent={true} />
-        {after ? after.map((item) => <MenuItem key={item} name={item} />) : ''}
-      </div>
-    );
-  } else {
-    return <div>error</div>;
-  }
 };
 
 export default Sidebar;
