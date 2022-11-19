@@ -4,10 +4,12 @@ import Sidebar from './Sidebar';
 
 type LayoutProps = {
   children: JSX.Element;
+  pageName: string;
+  mainStyles: string;
 };
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, pageName, mainStyles }: LayoutProps) => {
   return (
-    <div className="grid h-full grid-cols-9 grid-rows-[100px_1fr]">
+    <div className="grid h-screen w-screen grid-cols-9 grid-rows-[100px_1fr] overflow-hidden bg-neutral-900 px-8">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -18,10 +20,12 @@ const Layout = ({ children }: LayoutProps) => {
       </Head>
       <Header />
 
-      <main className="col-start-3 col-end-8 row-start-2">{children}</main>
+      <main className={`col-start-3 col-end-8 row-start-2 ${mainStyles}`}>
+        {children}
+      </main>
 
       <div className="col-start-9 row-start-2">
-        <Sidebar currentSection="about" />
+        <Sidebar currentPage={pageName} />
       </div>
     </div>
   );
