@@ -2,8 +2,8 @@ import Image from 'next/image';
 import image from '@/images/home_section.jpg';
 const HomeSection = () => {
   return (
-    <div className="relative h-full w-full">
-      <div className=" absolute top-2/3 z-10 h-4/6 w-5/6">
+    <div className="relative block h-full w-full">
+      <div className=" absolute top-2/3 z-10">
         <h2 className="text-3xl text-neutral-400">Hi</h2>
         <h2 className="text-3xl text-neutral-400">
           I&#39;m Nikolai Drobyshevski

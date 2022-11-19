@@ -3,8 +3,8 @@ import Button from '../Button';
 
 const ContactSection = () => {
   return (
-    <div className="flex h-full w-full flex-col  gap-8 p-4">
-      <h1 className="text-3xl text-blue-100/[.87]">Contact me</h1>
+    <div className="flex h-full w-full flex-col  gap-8">
+      <h1 className="text-3xl text-neutral-100/[.87]">Contact me</h1>
       <form className="flex grow flex-col gap-4">
         <div className="flex gap-6">
           <Input inputName="email" type="email" fill={true} />

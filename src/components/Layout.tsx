@@ -1,14 +1,13 @@
 import Head from 'next/head';
 import Header from './Header';
-import ScrollIndicator from './ScrollIndicator';
 import Sidebar from './Sidebar';
 
 type LayoutProps = {
-  children: React.ReactNode;
+  children: JSX.Element;
 };
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="container grid h-full grid-cols-9 grid-rows-[100px_1fr_50px]">
+    <div className="grid h-full grid-cols-9 grid-rows-[100px_1fr]">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -19,21 +18,10 @@ const Layout = ({ children }: LayoutProps) => {
       </Head>
       <Header />
 
-      <main className="col-start-2 col-end-9 row-start-2 row-end-3 mt-6 gap-6 overflow-x-visible overflow-y-scroll  ">
-        {children}
-      </main>
+      <main className="col-start-3 col-end-8 row-start-2">{children}</main>
 
-      <div
-        className="col-start-10 col-end-9 row-start-2 row-end-4"
-        id="sidebar"
-      >
+      <div className="col-start-9 row-start-2">
         <Sidebar currentSectionName="about" />
-      </div>
-      <div
-        className="relative col-start-1 col-end-2 row-start-2 row-end-4"
-        id="scrollIndicator"
-      >
-        <ScrollIndicator top={false} bottom={true} />
       </div>
     </div>
   );

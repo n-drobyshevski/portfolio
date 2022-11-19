@@ -36,12 +36,11 @@ const Sidebar = ({ currentSectionName }: { currentSectionName: string }) => {
       }
     }
     return (
-      <div className="flex h-full flex-col items-end gap-4">
+      <div className="flex h-full flex-col items-end justify-center gap-4">
         {before
           ? before.map((item) => <MenuItem key={item} name={item} />)
           : ''}
         <MenuItem name={currentItemName} isCurrent={true} />
-        <Bar w={0} h="auto" style="grow" />
         {after ? after.map((item) => <MenuItem key={item} name={item} />) : ''}
       </div>
     );

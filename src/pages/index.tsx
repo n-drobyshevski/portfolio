@@ -9,13 +9,13 @@ import ProjectSection from '@/components/sections/ProjectsSection';
 import ContactSection from '@/components/sections/ContactSection';
 const Home: NextPage = () => {
   return (
-    <div className="container h-screen w-screen bg-neutral-900 px-56 pb-8">
+    <div className="h-screen w-screen bg-neutral-900 px-8">
       <Layout>
-        {/* <HomeSection /> */}
+        <HomeSection />
         {/* <AboutSection /> */}
         {/* <SkillsSection /> */}
         {/* <ProjectSection /> */}
-        <ContactSection />
+        {/* <ContactSection /> */}
       </Layout>
     </div>
   );
